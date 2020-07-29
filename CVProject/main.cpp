@@ -1,15 +1,20 @@
-//
-//  main.cpp
-//  CVProject
-//
-//  Created by Musa Servan Sahin [Global Yazilim Gelistirme Servisi] on 29.07.2020.
-//  Copyright © 2020 Musa Servan Sahin [Global Yazilim Gelistirme Servisi]. All rights reserved.
-//
 
 #include <iostream>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+
+using namespace cv;
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Mat image = imread("StarMap.png", 0);
+    
+    if (image.empty())
+    {
+        cout << "!!! Failed imread(): image not found" << std::endl;
+        // don't let the execution continue, else imshow() will crash.
+    }
+    cout << "Hello, World!\n";
     return 0;
 }
